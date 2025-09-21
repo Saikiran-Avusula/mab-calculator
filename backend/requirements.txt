@@ -1,0 +1,8 @@
+Flask>=2.0
+Flask-Cors>=3.0
+python-dotenv>=0.21.0
+# OCR/PDF libs (add later when enabling OCR)
+# pytesseract>=0.3.10
+# pdfplumber>=0.6.0
+# pymupdf>=1.23.0
+# pandas>=1.5.0

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MAB Calculator — Upload Statements</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+    <main class="container">
+        <!-- Upload Section -->
+        <section class="section-card upload-section">
+            <div class="section-header">
+                <h2>MAB Calculator</h2>
+            </div>
+            <form id="upload-form">
+                <div class="field">
+                    <label>
+                        <span>Statement file (PDF only)</span>
+                        <div class="file-input-container">
+                            <input id="file" name="file" type="file" accept=".pdf" required />
+                            <div class="file-input-trigger">
+                                Choose Statement File
+                                <span class="file-name"></span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="field">
+                    <label>
+                        <span>Target Balance (₹)</span>
+                        <input id="target_balance" name="target_balance" type="number"
+                            placeholder="Optional, e.g. 20000" />
+                    </label>
+                </div>
+
+                <div class="actions">
+                    <button type="submit">Upload & Analyze</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Loading Indicator -->
+        <div id="loading-indicator" class="loading-indicator">
+            Analyzing your statement...
+        </div>
+
+        <!-- Analysis Results -->
+        <div id="analysis-container" class="analysis-container" style="display: none;">
+            <!-- Monthly Statistics Section -->
+            <section class="section-card monthly-statistics">
+                <div class="section-header">
+                    <h2>Monthly Statistics</h2>
+                </div>
+                <div class="stats-grid" id="monthly-stats">
+                    <!-- Stats will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Balance Analysis Section -->
+            <section class="section-card balance-analysis">
+                <div class="statement-period">
+                    <h2>Balance Analysis</h2>
+                    <div class="period-badge" id="statement-period">
+                        <!-- Period will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="stats-grid" id="balance-stats">
+                    <!-- Stats will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- What To Do Section -->
+            <section class="section-card what-to-do">
+                <div class="section-header">
+                    <h2>Recommendations</h2>
+                </div>
+                <div class="accordion" id="recommendations">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>Balance Maintenance</h3>
+                            <span class="accordion-icon">▼</span>
+                        </div>
+                        <div class="accordion-content" id="balance-maintenance">
+                            <!-- Content will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>Action Items</h3>
+                            <span class="accordion-icon">▼</span>
+                        </div>
+                        <div class="accordion-content" id="action-items">
+                            <!-- Content will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transactions Section -->
+            <section class="section-card transactions-section">
+                <div class="section-header">
+                    <h2>Transactions</h2>
+                </div>
+                <div id="transactions-list" class="transactions-list">
+                    <!-- Transactions will be populated by JavaScript -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Result Section (for errors or initial state) -->
+        <section id="result" class="result" aria-live="polite"></section>
+    </main>
+
+    <script src="static/main.js"></script>
+</body>
+
+</html>
